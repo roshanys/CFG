@@ -19,6 +19,7 @@ def stats(sales):
     sales_a = [sale["sales"] for sale in sales]
     print(f"Top sales : {max(sales_a)}")
     print(f"Lowest sales : {min(sales_a)}")
+    print(f"Total sales : {sum(sales_a)}")
     print(f"Average sales : {sum(sales_a)/len(sales_a)}")
 
 #read data 
