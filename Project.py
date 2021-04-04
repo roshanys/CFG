@@ -1,0 +1,48 @@
+import csv
+from operator import itemgetter
+from pprint import pprint
+
+def csv_to_list_of_dicts(csv_file_to_convert):
+    list_of_dicts = []
+    with open("sales.csv") as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for line in csv_reader:
+            list_of_dicts.append(line)
+    return list_of_dicts
+
+def sales_data(sales):
+    for sale in sales:
+        sale["sales"] = int(sale["sales"])
+    return sales
+
+def stats(sales):
+    sales_a = [sale["sales"] for sale in sales]
+    print(f"Top sales : {max(sales_a)}")
+    print(f"Lowest sales : {min(sales_a)}")
+    print(f"Average sales : {sum(sales_a)/len(sales_a)}")
+
+#read data 
+sales = csv_to_list_of_dicts("sales.csv")
+
+#convert data 
+sales = sales_data(sales)
+
+#collect sales order by month
+#sales_by_month = sorted(sales, key=itemgetter("sales"))
+#display result
+#pprint(sales_by_month)
+
+#print only sales in single list 
+for sale in sales:
+    print(f"Month: {sale['month']}   Sales: {sale['sales']}")
+
+#Stats
+stats(sales)
+
+
+
+
+
+
+
+
