@@ -21,6 +21,8 @@ def stats(sales):
     print(f"Lowest sales : {min(sales_a)}")
     print(f"Total sales : {sum(sales_a)}")
     print(f"Average sales : {sum(sales_a)/len(sales_a)}")
+    for a, b in zip(sales_a[::1], sales_a[1::1]):
+        print (f"Monthly Percentage Change : {(100 * (b - a) / a)}")
 
 #read data 
 sales = csv_to_list_of_dicts("sales.csv")
