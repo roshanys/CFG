@@ -12,11 +12,11 @@ def csv_to_list_of_dicts(csv_file_to_convert):
 
 def sales_data(sales):
     for sale in sales:
-        sale["sales"] = int(sale["sales"])
+        sale['sales'] = int(sale['sales'])
     return sales
 
 def stats(sales):
-    sales_a = [sale["sales"] for sale in sales]
+    sales_a = [sale['sales'] for sale in sales]
     print(f"Top sales : {max(sales_a)}")
     print(f"Lowest sales : {min(sales_a)}")
     print(f"Total sales : {sum(sales_a)}")

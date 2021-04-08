@@ -16,7 +16,7 @@ def sales_data(sales):
     return sales
 
 def stats(sales):
-    sales_a = [sale["SALES"] for sale in sales]
+    sales_a = [sale['SALES'] for sale in sales]
     print(f"Top sales : {max(sales_a)}")
     print(f"Lowest sales : {min(sales_a)}")
     print(f"Total sales : {sum(sales_a)}")
